@@ -242,6 +242,118 @@ GROUP BY 1;
 
 **Objective:** Categorize content as 'Bad' if it contains 'kill' or 'violence' and 'Good' otherwise. Count the number of items in each category.
 
+### 16. Movies vs TV Shows Added Over Time (Year-wise)
+
+```sql
+SELECT
+    EXTRACT(YEAR FROM TO_DATE(date_added, 'Month DD, YYYY')) AS year_added,
+    type,
+    COUNT(*) AS total_content
+FROM netflix
+WHERE date_added IS NOT NULL
+GROUP BY year_added, type
+ORDER BY year_added ASC, type;
+```
+**Objective:** Understand Netflix’s content strategy shift over time.
+
+
+### 17. Identify which countries receive older vs newer content.
+
+```sql
+SELECT
+    TRIM(country_name) AS country,
+    ROUND(
+        AVG(
+            EXTRACT(YEAR FROM TO_DATE(date_added, 'Month DD, YYYY')) - release_year
+        ), 
+        2
+    ) AS avg_content_age_years
+FROM netflix,
+LATERAL unnest(string_to_array(country, ',')) AS country_name
+WHERE country IS NOT NULL
+  AND date_added IS NOT NULL
+GROUP BY country_name
+ORDER BY avg_content_age_years ASC;
+```
+**Objective:** This analysis tells how old the content is when it appears on Netflix, NOT how long Netflix will take to add new content.
+
+### Q18. Rating Distribution by Content Type
+
+```sql
+SELECT
+    type,
+    rating,
+    COUNT(*) AS total_count
+FROM netflix
+WHERE rating IS NOT NULL
+GROUP BY type, rating
+ORDER BY type, total_count DESC;
+```
+
+**Objective:** Ratings overall kiska ky hai 
+
+### Q19. Genre Dominance for Top 5 Content-Producing Countries
+
+```sql
+SELECT
+    country,
+    TRIM(genre) AS genre,
+    COUNT(*) AS genre_count
+FROM netflix,
+LATERAL unnest(string_to_array(listed_in, ',')) AS genre
+WHERE country IN (
+    SELECT country
+    FROM netflix
+    WHERE country IS NOT NULL
+    GROUP BY country
+    ORDER BY COUNT(*) DESC
+    LIMIT 5
+)
+GROUP BY country, genre
+ORDER BY country, genre_count DESC;
+```
+
+**Objective:** Top 5 countries or vo ky ky mostly dalte hai content
+
+### Q20. “Bad” vs “Good” Content Trend Over Time
+
+```sql
+SELECT
+    EXTRACT(YEAR FROM TO_DATE(date_added, 'Month DD, YYYY')) AS year_added,
+    CASE
+        WHEN description ILIKE '%kill%'
+          OR description ILIKE '%violence%' THEN 'Bad'
+        ELSE 'Good'
+    END AS content_category,
+    COUNT(*) AS total_count
+FROM netflix
+WHERE date_added IS NOT NULL
+GROUP BY year_added, content_category
+ORDER BY year_added ASC;
+```
+**Objective:** I classified content using keyword-based rules and analyzed how the proportion of sensitive content evolved over time.
+
+### 21. India Content Trend: Movies vs TV Shows Over Time
+
+```sql
+SELECT 
+    EXTRACT(YEAR FROM TO_DATE(date_added, 'Month DD, YYYY')) AS year_added,
+    type,
+    COUNT(*) AS total_count
+FROM netflix
+WHERE country ILIKE '%India%'
+  AND date_added IS NOT NULL
+GROUP BY year_added, type
+ORDER BY year_added DESC, total_count DESC;
+
+SELECT * 
+FROM netflix
+WHERE country ILIKE '%India%'
+```
+
+**Objective:** For content originating from India, how has the number of Movies vs TV Shows added to Netflix changed year by year? 
+**Objective:** Is there an increasing or decreasing trend?
+
 ## Findings and Conclusion
 
 - **Content Distribution:** The dataset contains a diverse range of movies and TV shows with varying ratings and genres.
