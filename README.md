@@ -9,10 +9,11 @@ The dataset contains detailed information about Netflix movies and TV shows, inc
 
 ## Objectives
 
-- Analyze the distribution of content types (movies vs TV shows).
-- Identify the most common ratings for movies and TV shows.
-- List and analyze content based on release years, countries, and durations.
-- Explore and categorize content based on specific criteria and keywords.
+- To analyze Netflix’s content catalog and understand the distribution of Movies and TV Shows across different regions and years.
+- To identify trends in content growth, including year-wise additions and shifts in focus between Movies and TV Shows.
+- To evaluate audience targeting strategies by analyzing content ratings, genres, and maturity levels.
+- To perform country-wise and India-specific analysis by cleaning and normalizing multi-country data for accurate geographic insights.
+- To transform raw Netflix data into meaningful business insights using SQL and present them through interactive Tableau dashboards.
 
 ## Dataset
 
