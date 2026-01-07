@@ -1,4 +1,4 @@
-# Netflix Movies and TV Shows Data Analysis and Visulaisation using SQL & TABLEAU
+# Netflix Movies and TV Shows Data Analysis and Visulaization using SQL & TABLEAU
 
 ![](https://github.com/najirh/netflix_sql_project/blob/main/logo.png)
 
@@ -359,26 +359,26 @@ WHERE country ILIKE '%India%'
 
 ## Interactive Tableau Dashboard
 
-![](https://github.com/najirh/netflix_sql_project/blob/main/logo.png)
+![](https://github.com/AAKASH-BONI/netflix_sql_project/blob/main/IMG.png)
 
 ## Findings and Conclusion
 
-- **Content Distribution:** The dataset contains a diverse range of movies and TV shows with varying ratings and genres.
-- **Common Ratings:** Insights into the most common ratings provide an understanding of the content's target audience.
-- **Geographical Insights:** The top countries and the average content releases by India highlight regional content distribution.
-- **Content Categorization:** Categorizing content based on specific keywords helps in understanding the nature of content available on Netflix.
-
-This analysis provides a comprehensive view of Netflix's content and can help inform content strategy and decision-making.
-
-
+- The dataset contains a diverse range of movies and TV shows with varying ratings and genres.
+- Insights into the most common ratings provide an understanding of the content's target audience.
+- Netflix has more Movies than TV Shows, but the number of TV Shows has increased a lot in recent years.
+- Netflix started adding much more content after 2015, showing fast growth in its content library.
+- Drama and international content are the most common genres on Netflix.
+- The United States and India have the highest amount of content, showing Netflix’s strong focus on these countries.
+- Cleaning the data properly (dates, countries, and duplicates) was very important to get correct results and meaningful visuals.
+- This analysis provides a comprehensive view of Netflix's content and can help inform content strategy and decision-making.
 
 ## Author - Zero Analyst
 
-This project is part of my portfolio, showcasing the SQL skills essential for data analyst roles. If you have any questions, feedback, or would like to collaborate, feel free to get in touch!
+This project is part of my portfolio, showcasing the SQL and Visualizing skills essential for data analyst roles. If you have any questions, feedback, or would like to collaborate, feel free to get in touch!
 
-### Stay Updated and Join the Community
+### Stay Updated and Get Connected
 
-For more content on SQL, data analysis, and other data-related topics, make sure to follow me on social media and join our community:
+For more content on SQL, data analysis, Visualization and other data-related topics, make sure to follow me on social media and join our community:
 
 - **LinkedIn**: [Connect with me professionally](https://www.linkedin.com/in/akash-sharma-96a748222/)
 
