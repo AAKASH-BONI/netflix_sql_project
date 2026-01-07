@@ -3,7 +3,9 @@
 ![](https://github.com/najirh/netflix_sql_project/blob/main/logo.png)
 
 ## Overview
-This project involves a comprehensive analysis of Netflix's movies and TV shows data using SQL. The goal is to extract valuable insights and answer various business questions based on the dataset. The following README provides a detailed account of the project's objectives, business problems, solutions, findings, and conclusions.
+This project presents an end-to-end data analytics case study on Netflix’s content catalog, focusing on extracting meaningful business insights from real-world data. The analysis was conducted using SQL for data exploration and transformation, followed by interactive visualizations built in Tableau to communicate insights effectively.
+
+The dataset contains detailed information about Netflix movies and TV shows, including content type, release year, ratings, genres, countries, and descriptions. During the analysis, several real-world data challenges were addressed, such as inconsistent date formats, multi-country values in a single field, and duplicate counting issues, ensuring accurate and reliable results.
 
 ## Objectives
 
