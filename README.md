@@ -357,6 +357,10 @@ WHERE country ILIKE '%India%'
 **Objective:** For content originating from India, how has the number of Movies vs TV Shows added to Netflix changed year by year? 
 **Objective:** Is there an increasing or decreasing trend?
 
+## Interactive Tableau Dashboard
+
+![](https://github.com/najirh/netflix_sql_project/blob/main/logo.png)
+
 ## Findings and Conclusion
 
 - **Content Distribution:** The dataset contains a diverse range of movies and TV shows with varying ratings and genres.
